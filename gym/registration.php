@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+body{
+}	
+.container {
+	border: solid 3px  #000000;
+	padding:10px;
+	margin: 70px auto;
+	width:37%;
+	box-sizing: border-box;
+	text-align:center;
+	background-color:#FFF;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.3);	
+	
+}
+.back_button{
+	
+	float:left;
+	
+	
+	}
+.login{
+	
+	float:right;
+	
+	
+	}
+input{	
+}
+
+.Registerbtn{
+	 background-color:#800000;
+	 color: #FFF;
+	 padding:4px 6px ;
+	margin-left:40%;
+	}	
+.from_new {
+	text-align:left;
+}
+.from_new h2 {
+	margin: 8px;
+	text-align:center;
+	color:#000;
+}	
+.from_new label {
+	float:left;
+	width:100px;
+}
+.bottom_button{
+display: inline-block;
+width:91%;
+padding:20px;
+}
+</style>
+</head>
+
+<body bgcolor="#FA8072" >
+
+
+<div class="container">
+
+<?php 
+if(!empty($_REQUEST['status']))
+{
+
+if($_REQUEST['status']==1)
+{
+echo "User name is already exist. Please use another user name ";
+}
+
+if($_REQUEST['status']==2)
+{
+echo "Your Registration is successfully done";
+}
+
+
+} ?>
+
+
+<form class="from_new" action="reg_save.php" method="get" >
+ <h2></b><U>Create Your Accout To Join With Us</U></b></h2><br><br> 
+
+ <label><b>Name</b></label><input type="text" placeholder="Name" required="required" name="fname">
+ <label for=" Last Name "><b></b></label><input type="text" placeholder="Last Name" name="lname" ><br><br>
+ <label><b>Username</b></label><input type="text" placeholder="Username" name="username" required="required"><br><br>
+ <label><b>Password</b></label><input type="Password" placeholder="Password" name="pwd" required="required"><br><br>
+ <label><b>Confrom-Password</b></label><input type="Password" placeholder="Conform-Password" required="required"><br><br><br>
+
+ <label for=" Email "><b>Email</b></label><input type="text" name="email" placeholder="...@gmail.com" required="required"><br><br>
+ <label for="Country"><b>Country</b></label>
+ <select name="country">
+  <option value="select">Select</option>
+  <option value="Australia">Australia</option>
+  <option value="Brazil">Brazil</option>
+  <option value="Canada">Canada</option>
+  <option value="India">India</option>
+  <option value="Indiana">Indiana</option>
+  <option value="New Zealand">New Zealand</option>
+  <option value="U.S.A">U.S.A</option>
+  <option value="Other">Other</option>
+  </select><br><br>
+ 
+ <label for ="Gender"><b>Gender</b></label> <input type="text" name="gender" placeholder="Gender" required="required"><br><br>  
+  
+
+ <label for="D.O.B"><b>D.O.B</b></label><input type="text" name="dob" placeholder="dd/mm/yyyy" required="required"><br><br>
+ 
+ <button type="submit" class="Registerbtn">Register</button>
+<div class="bottom_button"> 
+<a href="Home.html" class="back_button">Home </a>
+
+<a href="login.php" class="login">Login  </a>
+ </div>
+ </form> 
+
+ </div>
+
+
+
+</body>
+</html>
